@@ -1,39 +1,91 @@
-/*========================================
-  NAVBAR
-========================================*/
+/*====================================================
+            NAVBAR - PREMIUM VERSION
+====================================================*/
 
-/* Top Header */
-/*==========================
+:root{
+
+    --primary:#0C6D91;
+    --secondary:#13B4D8;
+    --accent:#F4B400;
+
+    --white:#ffffff;
+    --black:#222;
+
+    --gray:#64748B;
+
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+/*==================================
         NAVBAR
-==========================*/
+==================================*/
 
 .navbar{
 
-    background:#0ba8c8;
+    position:sticky;
+   
+    top:15px;
+
+    z-index:999;
 
     width:100%;
 
+    background:transparent;
+
 }
+
+/*==================================
+        CONTAINER
+==================================*/
 
 .nav-container{
 
-    max-width:1320px;
+    max-width:1250px;
 
     margin:auto;
-
-}
-
-.nav-menu{
 
     display:flex;
 
     justify-content:center;
 
+}
+
+/*==================================
+      NAV WRAPPER
+==================================*/
+
+.nav-menu{
+
+    display:flex;
+ border:1px solid #8fd1e9;
     align-items:center;
+    margin-top: 5px;
+    justify-content:center;
+
+    gap:18px;
 
     list-style:none;
 
+    background:rgba(193, 228, 236, 0.95);
+
+    backdrop-filter:blur(18px);
+
+    padding:15px;
+
+    border-radius:20px;
+
+    box-shadow:var(--shadow);
+
 }
+
+/*==================================
+        NAV ITEM
+==================================*/
 
 .nav-menu>li{
 
@@ -41,79 +93,189 @@
 
 }
 
+/*==================================
+      NAVIGATION LINK
+==================================*/
+
 .nav-menu>li>a{
+
+    position:relative;
 
     display:flex;
 
     align-items:center;
 
-    gap:6px;
-
-    color:#fff;
+    gap:8px;
 
     text-decoration:none;
 
-    padding:28px 32px;
+    color:var(--black);
 
-    font-size:15px;
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    font-size:14px;
 
     font-weight:700;
 
     letter-spacing:.8px;
 
-    text-transform:uppercase;
+    transition:var(--transition);
 
-    transition:.3s;
-
-}
-
-/* Vertical Divider */
-
-.nav-menu>li:not(:last-child)>a{
-
-    border-right:1px solid rgba(255,255,255,.35);
+    overflow:hidden;
 
 }
 
-/* Hover */
+/*==================================
+      Animated Border
+==================================*/
+
+.nav-menu>li>a::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:14px;
+
+    border:2px solid transparent;
+
+    background:
+    linear-gradient(white,white) padding-box,
+    linear-gradient(135deg,#0C6D91,#13B4D8,#3CCB7F) border-box;
+
+    -webkit-mask:
+    linear-gradient(#fff 0 0) padding-box,
+    linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+/*==================================
+      Hover
+==================================*/
 
 .nav-menu>li>a:hover{
 
-    background:#098fb0;
+    color:var(--primary);
+
+    transform:translateY(-4px);
+
+    background:#F8FCFD;
 
 }
 
-/*==========================
-      DROPDOWN
-==========================*/
+.nav-menu>li>a:hover::before{
+
+    opacity:1;
+
+}
+
+/*==================================
+      Bottom Line
+==================================*/
+
+.nav-menu>li>a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:8px;
+
+    width:0;
+
+    height:3px;
+
+    background:linear-gradient(90deg,#13B4D8,#0C6D91);
+
+    border-radius:50px;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+.nav-menu>li>a:hover::after{
+
+    width:55%;
+
+}
+
+/*==================================
+      Active Menu
+==================================*/
+
+.active>a{
+
+    color:var(--primary);
+
+    background:#F4FBFD;
+
+}
+
+.active>a::before{
+
+    opacity:1;
+
+}
+
+.active>a::after{
+
+    width:60%;
+
+}
+
+/*==================================
+        Dropdown
+==================================*/
+
+.dropdown{
+
+    position:relative;
+
+}
 
 .dropdown-menu{
 
     position:absolute;
 
-    top:100%;
+    top:120%;
 
-    left:0;
+    left:50%;
 
-    min-width:240px;
+    transform:translateX(-50%) translateY(15px);
 
-    background:#fff;
+    width:260px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:10px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
 
     list-style:none;
-
-    border-radius:8px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
 
     opacity:0;
 
     visibility:hidden;
 
-    transform:translateY(10px);
-
-    transition:.3s;
-
-    z-index:999;
+    transition:.35s;
 
 }
 
@@ -123,61 +285,118 @@
 
     visibility:visible;
 
-    transform:translateY(0);
+    transform:translateX(-50%) translateY(0);
+
+}
+
+.dropdown-menu li{
+
+    margin:6px 0;
 
 }
 
 .dropdown-menu li a{
 
-    display:block;
+    display:flex;
 
-    padding:14px 18px;
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 16px;
+
+    border-radius:12px;
 
     text-decoration:none;
 
-    color:#333;
-
-    font-size:14px;
-
-    font-weight:500;
+    color:#334155;
 
     transition:.3s;
+
+    font-weight:500;
 
 }
 
 .dropdown-menu li a:hover{
 
-    background:#f5f5f5;
+    background:#EEF9FC;
 
-    color:#0ba8c8;
+    color:var(--primary);
+
+    transform:translateX(5px);
 
 }
+
+/*==================================
+      Arrow
+==================================*/
 
 .dropdown i{
 
     font-size:11px;
 
+    transition:.3s;
+
 }
 
-/* Main Navbar */
+.dropdown:hover i{
 
+    transform:rotate(180deg);
 
-/* Navigation Links */
+}
 
+/*==================================
+      Sticky Animation
+==================================*/
 
-/* Dropdown */
+.navbar{
 
+    animation:fadeDown .5s ease;
 
-/* Register Button */
+}
 
+@keyframes fadeDown{
 
-/* Sticky Navbar */
+    from{
 
+        opacity:0;
 
-/* Mobile Menu */
+        transform:translateY(-20px);
 
+    }
 
-/* Hamburger */
+    to{
 
+        opacity:1;
 
-/* Navbar Animation */
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==================================
+        MOBILE
+==================================*/
+
+@media(max-width:992px){
+
+    .nav-menu{
+
+        flex-wrap:wrap;
+
+        gap:10px;
+
+        border-radius:18px;
+
+    }
+
+    .nav-menu>li>a{
+
+        padding:12px 18px;
+
+        font-size:13px;
+
+    }
+
+}
