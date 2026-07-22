@@ -712,49 +712,31 @@ body {
 
 
 .hero {
-
     background: #4c5f07;
 
 }
 
-/*=========================
-        CARD
-=========================*/
-/*====================================================
-                    HERO SECTION
-====================================================*/
 
-.hero {
+.hero{
 
-    position: relative;
+    position:relative;
 
-    margin: 20px;
+    margin:20px;
 
-    min-height: 650px;
+    min-height:650px;
 
-    border-radius: 32px;
+    border-radius:32px;
 
-    overflow: hidden;
+    overflow:hidden;
 
-    border: 1px solid #d8d8d8;
-    background:
-        linear-gradient(90deg,
-            rgba(255, 255, 255, .97),
-            rgba(255, 255, 255, .88),
-            rgba(255, 255, 255, .15),
-            transparent);
-    background-image: url("../images/gallery/food energy image.png");
+    border:1px solid #d8d8d8;
 
-    background-size: cover;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
+    background:#4c5f07;
 
     box-shadow:
-        0 18px 50px rgba(0, 0, 0, .10);
+        0 18px 50px rgba(0,0,0,.10);
 
-    transition: .4s;
+    transition:.4s;
 
 }
 
@@ -1013,6 +995,18 @@ body {
 }
 .hero-item{
 
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#32475b;
+
+    font-weight:700;
+
+    font-size:17px;
+
     transition:.4s;
 
 }
@@ -1061,6 +1055,28 @@ body {
     position:relative;
 
     overflow:hidden;
+
+    padding:18px 38px;
+
+    border-radius:60px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:700;
+
+    background:
+
+    linear-gradient(
+
+    135deg,
+
+    #0BA8C8,
+
+    #138CC5);
+
+    transition:.35s;
 
 }
 
@@ -1207,22 +1223,6 @@ body {
 
 }
 
-.hero-item {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    color: #32475b;
-
-    font-weight: 700;
-
-    font-size: 17px;
-
-}
-
 .hero-item i {
 
     width: 52px;
@@ -1262,25 +1262,7 @@ body {
 
 }
 
-.btn-primary {
 
-    padding: 18px 38px;
-
-    border-radius: 60px;
-
-    text-decoration: none;
-
-    color: #fff;
-
-    font-weight: 700;
-
-    background: linear-gradient(135deg,
-            #0BA8C8,
-            #138CC5);
-
-    transition: .35s;
-
-}
 
 .btn-primary:hover {
 
@@ -1345,93 +1327,11 @@ body {
 
 }
 
-/*=========================
-        RESPONSIVE
-=========================*/
-
-@media(max-width:992px) {
-
-    .hero {
-
-        min-height: auto;
-
-    }
-
-    .hero-overlay {
-
-        padding: 60px 35px;
-
-        background:
-            linear-gradient(rgba(255, 255, 255, .90),
-                rgba(255, 255, 255, .82));
-
-    }
-
-    .hero-title {
-
-        font-size: 46px;
-
-    }
-
-    .hero-description {
-
-        font-size: 18px;
-
-    }
-
-}
-
-@media(max-width:768px) {
-
-    .hero {
-
-        margin: 15px;
-
-    }
-
-    .hero-overlay {
-
-        padding: 45px 25px;
-
-    }
-
-    .hero-title {
-
-        font-size: 38px;
-
-    }
-
-    .hero-info {
-
-        gap: 20px;
-
-        flex-direction: column;
-
-    }
-
-    .hero-buttons {
-
-        flex-direction: column;
-
-    }
-
-    .btn-primary,
-    .btn-secondary {
-
-        text-align: center;
-
-    }
-
-}
-
-
 
 /*==========================================
         SUMMIT GALLERY
 ==========================================*/
-/*==================================================
-                SUMMIT SHOWCASE
-==================================================*/
+
 
 .summit-showcase{
 
@@ -1640,7 +1540,8 @@ body {
 ==========================================*/
 
 .summit-banner-badge{
-
+    
+ animation:badgeFloat 4s ease-in-out infinite;
     display:inline-flex;
 
     align-items:center;
@@ -1702,24 +1603,7 @@ body {
 
 }
 
-.summit-banner h1 span{
 
-    display:block;
-
-    margin-top:12px;
-
-    background:linear-gradient(
-        90deg,
-        #D5F86E,
-        #8AE97D,
-        #2DD39B
-    );
-
-    -webkit-background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
-}
 
 
 /*==========================================
@@ -1797,11 +1681,7 @@ body {
 
     }
 
-    .summit-banner h1 span{
-
-        margin-top:8px;
-
-    }
+   
 
     .summit-banner p{
 
@@ -1809,70 +1689,14 @@ body {
 
     }
 
-    .summit-banner-badge{
-
-        padding:8px 18px;
-
-        font-size:.7rem;
-
-    }
+    
 
 }
 /*==========================================
         AURORA LIGHTS
 ==========================================*/
 
-.summit-banner::before{
 
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-
-    height:650px;
-
-    left:-220px;
-
-    top:-220px;
-
-    border-radius:50%;
-
-    background:#00D084;
-
-    filter:blur(170px);
-
-    opacity:.18;
-
-    animation:auroraLeft 18s ease-in-out infinite;
-
-}
-
-.summit-banner::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:650px;
-
-    height:650px;
-
-    right:-220px;
-
-    bottom:-220px;
-
-    border-radius:50%;
-
-    background:#5BCBFF;
-
-    filter:blur(170px);
-
-    opacity:.18;
-
-    animation:auroraRight 20s ease-in-out infinite;
-
-}
 
 @keyframes auroraLeft{
 
@@ -1911,11 +1735,6 @@ body {
         FLOATING BADGE
 ==========================================*/
 
-.summit-banner-badge{
-
-    animation:badgeFloat 4s ease-in-out infinite;
-
-}
 
 @keyframes badgeFloat{
 
@@ -2024,49 +1843,6 @@ body {
 }
 
 
-/*==========================================
-            RESPONSIVE
-==========================================*/
-
-@media(max-width:992px){
-
-    .summit-page-header{
-
-        padding:90px 25px 70px;
-
-    }
-
-    .summit-header-content h1{
-
-        font-size:3rem;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    .summit-header-content h1{
-
-        font-size:2.3rem;
-
-    }
-
-    .summit-header-content h1 span{
-
-        margin-top:10px;
-
-    }
-
-    .summit-header-badge{
-
-        font-size:.72rem;
-
-        padding:10px 20px;
-
-    }
-
-}
 /*==================================================
                 SWIPER
 ==================================================*/
@@ -2138,15 +1914,10 @@ body {
         0 0 90px rgba(15,140,100,.15);
 
 }
-.summitSlider .swiper-slide-active img{
-
-    transform:scale(1.05);
-
-}
 
 .summitSlider .swiper-slide-active img{
 
-    transform:scale(1.03);
+    transform:scale(1.06);
 
     transition:1s;
 
@@ -2334,6 +2105,7 @@ body {
     animation:summitFloat 6s ease-in-out infinite;
 
 }
+
 /*==================================================
                 ABOUT SECTION
 ==================================================*/
@@ -3275,15 +3047,16 @@ body {
 
     border-radius: 30px;
 
-    padding: 3 5px;
-
+   padding:3px 5px;
     box-shadow:
         0 20px 60px rgba(0, 0, 0, .08);
 
 }
 
 .about-left {
-
+     display: flex;
+    flex-direction: column;
+    gap: 26px;
     min-height: 550px;
 
     border-radius: 22px;
@@ -3321,13 +3094,6 @@ body {
             LEFT PANEL
 =========================================*/
 
-.about-left {
-
-    display: flex;
-    flex-direction: column;
-    gap: 26px;
-
-}
 
 .left-header {
 
@@ -3486,24 +3252,7 @@ body {
             ICON
 =========================================*/
 
-.card-icon {
 
-    width: 62px;
-    height: 62px;
-
-    border-radius: 18px;
-
-    background: #edf8f4;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-shrink: 0;
-
-    transition: .4s;
-
-}
 
 .card-icon i {
 
@@ -4662,9 +4411,7 @@ body {
 
 }
 
-/*==========================
-     FEATURE CARDS
-==========================*/
+
 /*==========================================
             SPEAKERS SECTION
 ==========================================*/
@@ -4952,53 +4699,7 @@ body {
 
 }
 
-/*=========================================
-            RESPONSIVE
-=========================================*/
 
-@media(max-width:992px){
-
-    .section-headingS h2{
-
-        font-size:46px;
-
-    }
-
-}
-
-@media(max-width:768px){
-
-    .section-headingS{
-
-        margin-bottom:50px;
-
-        padding:0 20px;
-
-    }
-
-    .section-headingS h2{
-
-        font-size:36px;
-
-    }
-
-    .section-headingS p{
-
-        font-size:17px;
-
-        line-height:1.8;
-
-    }
-
-    .section-tagS{
-
-        font-size:12px;
-
-        padding:10px 20px;
-
-    }
-
-}
 
 /*==========================
         GRID
@@ -5301,175 +5002,6 @@ body {
     }
 
 }
-
-/*==========================
-      RESPONSIVE
-==========================*/
-
-@media(max-width:992px) {
-
-    .speaker-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-}
-
-@media(max-width:768px) {
-
-    .speakers-wrapper {
-
-        padding: 35px;
-
-    }
-
-    .speaker-top {
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 18px;
-
-    }
-
-    .speaker-card h3 {
-
-        font-size: 24px;
-
-    }
-
-}
-
-@media(max-width:576px) {
-
-    .speakers-wrapper {
-
-        padding: 25px;
-
-    }
-
-    .speaker-card {
-
-        padding: 25px;
-
-    }
-
-}
-
-/*==========================
-        STATS
-==========================*/
-
-.about-stats {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-bottom: 35px;
-
-    padding: 25px;
-
-    border-radius: 18px;
-
-    background: #F8FBFD;
-}
-
-
-.about-stats h3 {
-
-    color: #133E88;
-
-    font-size: 34px;
-
-    margin-bottom: 6px;
-
-}
-
-.about-stats p {
-
-    margin: 0;
-
-    font-size: 15px;
-
-    color: #64748B;
-
-}
-
-/*==========================
-      ANIMATIONS
-==========================*/
-
-.about-card {
-
-    animation: fadeCard .9s ease;
-
-}
-
-@keyframes fadeCard {
-
-    from {
-
-        opacity: 0;
-
-        transform: translateY(50px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
-
-}
-
-@keyframes floatBadge {
-
-    0% {
-
-        transform: translateY(0);
-
-    }
-
-    50% {
-
-        transform: translateY(-10px);
-
-    }
-
-    100% {
-
-        transform: translateY(0);
-
-    }
-
-}
-
-@keyframes lineGrow {
-
-    from {
-
-        width: 0;
-
-    }
-
-    to {
-
-        width: 110px;
-
-    }
-
-}
-
-
-/*=========================================
-        FOCUS AREA
-=========================================*/
 
 /*=========================================================
 CONFERENCE FOCUS SECTION
@@ -6260,92 +5792,7 @@ IMAGE CARD
     transform: scale(1.02);
 }
 
-/*=========================================================
-RESPONSIVE
-=========================================================*/
 
-@media(max-width:1200px) {
-
-    .focus-layout {
-
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-
-    }
-
-    .focus-right {
-
-        position: relative;
-
-        display: flex;
-
-        justify-content: flex-end;
-
-        padding-right: 30px;
-
-    }
-
-    .focus-title {
-
-        font-size: 44px;
-
-    }
-
-    .focus-image img {
-
-        width: 100%;
-
-        height: 640px;
-
-        display: block;
-
-        object-fit: cover;
-
-        object-position: center;
-
-        transition: .45s ease;
-
-    }
-
-    .focus-image:hover img {
-
-        transform: scale(1.03);
-
-    }
-
-}
-
-
-@media(max-width:768px) {
-
-    .focus-left {
-
-        padding: 35px;
-
-        min-height: auto;
-
-    }
-
-    .focus-title {
-
-        font-size: 34px;
-
-    }
-
-    .focus-description {
-
-        font-size: 16px;
-
-    }
-
-    .focus-image img {
-
-        height: 400px;
-
-    }
-
-}
 
 
 
