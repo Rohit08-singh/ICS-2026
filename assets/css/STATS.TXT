@@ -1,0 +1,1693 @@
+
+/*====================================
+            STATS
+====================================*/
+/*==================================================
+                STATS
+==================================================*/
+
+.stats {
+
+    padding: 100px 20px;
+
+    background: linear-gradient(180deg,
+            #F8FBFD,
+            #FFFFFF);
+
+}
+
+/*======================================
+        WRAPPER
+======================================*/
+
+.stats-card {
+
+
+    position: relative;
+
+    padding: 40px;
+
+    border-radius: 34px;
+
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+    border: 2px solid #c5dcf7;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, .08);
+}
+
+/* Moving Border */
+
+.stats-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 200%;
+
+    height: 5px;
+
+    background: linear-gradient(90deg,
+
+            transparent,
+
+            #0BA8C8,
+
+            #18A56F,
+
+            #F4B400,
+
+            transparent);
+
+    animation: statsBorder 6s linear infinite;
+
+}
+
+/* Background Circle */
+
+.stats-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -140px;
+
+    top: -140px;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: rgba(11, 168, 200, .05);
+
+}
+
+/*======================================
+        GRID
+======================================*/
+
+.stats-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 28px;
+
+    margin-top: 60px;
+
+}
+
+/*======================================
+        CARD
+======================================*/
+
+.stat-card {
+
+    position: relative;
+
+    text-align: center;
+
+    padding: 35px 25px;
+
+    border-radius: 24px;
+
+    background: #FCFEFF;
+
+    border: 2px solid #EAF0F6;
+
+    transition: .4s;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .05);
+
+}
+
+/* Animated Left Border */
+
+.stat-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 5px;
+
+    height: 100%;
+
+    background: linear-gradient(180deg,
+
+            #0BA8C8,
+
+            #18A56F,
+
+            #F4B400);
+
+}
+
+/* Shine */
+
+.stat-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+
+    top: 0;
+
+    width: 50%;
+
+    height: 100%;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: skewX(-25deg);
+
+}
+
+.stat-card:hover::after {
+
+    animation: cardShine .8s;
+
+}
+
+.stat-card:hover {
+
+    transform: translateY(-10px);
+
+    border-color: #0BA8C8;
+
+    box-shadow:
+        0 22px 45px rgba(11, 168, 200, .18);
+
+}
+
+/*======================================
+        ICON
+======================================*/
+
+.stat-icon {
+
+    width: 80px;
+
+    height: 80px;
+
+    margin: auto;
+
+    margin-bottom: 22px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(135deg,
+
+            #EAF8FD,
+
+            #F4FFF8);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #0BA8C8;
+
+    font-size: 32px;
+
+    transition: .4s;
+
+    box-shadow:
+        0 12px 25px rgba(11, 168, 200, .12);
+
+}
+
+.stat-card:hover .stat-icon {
+
+    transform: rotate(10deg) scale(1.1);
+
+    background: linear-gradient(135deg,
+
+            #0BA8C8,
+
+            #18A56F);
+
+    color: white;
+
+}
+
+/*======================================
+        TEXT
+======================================*/
+
+.stat-card h2 {
+
+    font-size: 52px;
+
+    color: #123B87;
+
+    margin-bottom: 10px;
+
+    font-weight: 800;
+
+}
+
+.stat-card h4 {
+
+    color: #123B87;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+
+}
+
+.stat-card p {
+
+    color: #6B7280;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+
+}
+
+/*======================================
+        LOAD
+======================================*/
+
+.stat-card {
+
+    animation: fadeStats .8s ease both;
+
+}
+
+.stat-card:nth-child(2) {
+
+    animation-delay: .15s;
+
+}
+
+.stat-card:nth-child(3) {
+
+    animation-delay: .3s;
+
+}
+
+.stat-card:nth-child(4) {
+
+    animation-delay: .45s;
+
+}
+
+/*======================================
+        ANIMATION
+======================================*/
+
+@keyframes fadeStats {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes statsBorder {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(50%);
+
+    }
+
+}
+
+@keyframes cardShine {
+
+    from {
+
+        left: -120%;
+
+    }
+
+    to {
+
+        left: 140%;
+
+    }
+
+}
+
+/*======================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:1100px) {
+
+    .stats-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .stats-card {
+
+        padding: 35px;
+
+    }
+
+    .stats-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.focus-area {
+
+    padding: 12px;
+
+    background: white;
+
+}
+
+/*==================================================
+            MAIN WRAPPER
+==================================================*/
+
+.focus-wrapper {
+
+
+    position: relative;
+
+    padding: 40px;
+
+    border-radius: 34px;
+
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+
+    border: 3px solid #e5e6e9;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, .08);
+
+}
+
+/*========================================
+        Moving Top Border
+========================================*/
+
+.focus-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -100%;
+
+    width: 200%;
+
+    height: 5px;
+
+    background:
+
+        linear-gradient(90deg,
+
+            transparent,
+
+            #00B5D8,
+
+            #1FA971,
+
+            #F4B400,
+
+            transparent);
+
+    animation: topBorder 7s linear infinite;
+
+}
+
+/*========================================
+        Decorative Glow
+========================================*/
+
+.focus-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    right: -180px;
+
+    top: -180px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(rgba(0, 181, 216, .10),
+
+            transparent 70%);
+
+}
+
+/*==================================================
+                HEADING
+==================================================*/
+
+.focus-wrapper .section-heading {
+
+    text-align: center;
+
+    margin-bottom: 80px;
+
+}
+
+.focus-wrapper .section-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 24px;
+
+    border-radius: 50px;
+
+    background: #EAF8FD;
+
+    color: #0B6B91;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    box-shadow:
+
+        0 8px 18px rgba(11, 168, 200, .15);
+
+}
+
+.focus-wrapper h2 {
+
+    margin: 24px 0 18px;
+
+    font-size: 48px;
+
+    font-weight: 800;
+
+    color: #123C88;
+
+    position: relative;
+
+}
+
+/* Animated Underline */
+
+.focus-wrapper h2::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -18px;
+
+    transform: translateX(-50%);
+
+    width: 130px;
+
+    height: 5px;
+
+    border-radius: 50px;
+
+    background:
+
+        linear-gradient(90deg,
+
+            #00B5D8,
+
+            #18A56F,
+
+            #F4B400);
+
+    animation: underlineMove 3s ease infinite;
+
+}
+
+.focus-wrapper .section-heading p {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #6B7280;
+
+    font-size: 17px;
+
+    line-height: 1.9;
+
+}
+
+/*==================================================
+                CARD
+==================================================*/
+
+.focus-card {
+
+    display: grid;
+
+    grid-template-columns: 1fr 500px;
+
+    align-items: center;
+
+    gap: 70px;
+
+    margin-bottom: 45px;
+
+    padding: 40px;
+
+    border-radius: 30px;
+
+    border: 1px solid #E8EEF5;
+
+    background: #FCFEFF;
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .45s;
+
+}
+
+/* Alternate Layout */
+
+.focus-card:nth-child(even) {
+
+    grid-template-columns: 500px 1fr;
+
+}
+
+.focus-card:nth-child(even) .focus-content {
+
+    order: 2;
+
+}
+
+.focus-card:nth-child(even) .focus-image {
+
+    order: 1;
+
+}
+
+/* Hover */
+
+.focus-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #00B5D8;
+
+    box-shadow:
+
+        0 25px 55px rgba(0, 181, 216, .15);
+
+}
+
+/*==================================================
+                CONTENT
+==================================================*/
+
+.focus-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+/*==================================================
+            NUMBER BADGE
+==================================================*/
+
+.focus-number {
+
+    width: 85px;
+
+    height: 85px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 34px;
+
+    font-weight: 800;
+
+    color: #fff;
+
+    margin-bottom: 22px;
+
+    background: linear-gradient(135deg,
+            #00B5D8,
+            #18A56F);
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 181, 216, .25);
+
+    position: relative;
+
+    overflow: hidden;
+
+    transition: .45s;
+
+}
+
+/* Shine */
+
+.focus-number::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+
+    top: 0;
+
+    width: 50%;
+
+    height: 100%;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: skewX(-25deg);
+
+}
+
+.focus-card:hover .focus-number {
+
+    transform: rotate(-12deg) scale(1.08);
+
+}
+
+.focus-card:hover .focus-number::before {
+
+    animation: numberShine .9s;
+
+}
+
+/*==================================================
+            CATEGORY
+==================================================*/
+
+.focus-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    width: max-content;
+
+    padding: 10px 22px;
+
+    border-radius: 50px;
+
+    background: #EAF8FD;
+
+    color: #0B6D91;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 22px;
+
+}
+
+/*==================================================
+                TITLE
+==================================================*/
+
+.focus-content h3 {
+
+    font-size: 40px;
+
+    line-height: 1.2;
+
+    color: #123C88;
+
+    margin-bottom: 18px;
+
+    font-weight: 800;
+
+    transition: .35s;
+
+}
+
+.focus-card:hover h3 {
+
+    color: #00B5D8;
+
+}
+
+/*==================================================
+                DESCRIPTION
+==================================================*/
+
+.focus-content p {
+
+    font-size: 17px;
+
+    color: #667085;
+
+    line-height: 1.9;
+
+    margin-bottom: 28px;
+
+}
+
+/*==================================================
+            FEATURE LIST
+==================================================*/
+
+.focus-content ul {
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px 28px;
+
+    margin: 10px 0 35px;
+
+    padding: 0;
+
+}
+
+.focus-content li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #344054;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    transition: .35s;
+
+}
+
+/* Tick */
+
+.focus-content li::before {
+
+    content: "✓";
+
+    width: 26px;
+
+    height: 26px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #EAF8FD;
+
+    color: #18A56F;
+
+    font-weight: 700;
+
+    flex-shrink: 0;
+
+}
+
+.focus-card:hover li {
+
+    transform: translateX(5px);
+
+}
+
+/*==================================================
+                BUTTON
+==================================================*/
+
+.focus-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: max-content;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: #fff;
+
+    font-weight: 700;
+
+    background: linear-gradient(135deg,
+            #00B5D8,
+            #18A56F);
+
+    box-shadow:
+
+        0 18px 35px rgba(0, 181, 216, .22);
+
+    transition: .4s;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+.focus-btn i {
+
+    transition: .35s;
+
+}
+
+.focus-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -120%;
+
+    top: 0;
+
+    width: 45%;
+
+    height: 100%;
+
+    background: rgba(255, 255, 255, .35);
+
+    transform: skewX(-25deg);
+
+}
+
+.focus-btn:hover::before {
+
+    animation: buttonShine .9s;
+
+}
+
+.focus-btn:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+
+        0 25px 45px rgba(0, 181, 216, .28);
+
+}
+
+.focus-btn:hover i {
+
+    transform: translateX(8px);
+
+}
+
+/*==================================================
+                IMAGE
+==================================================*/
+
+.focus-image {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+}
+
+.image-box {
+
+    position: relative;
+
+    width: 100%;
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    padding: 4px;
+
+    background: linear-gradient(135deg,
+            #00B5D8,
+            #18A56F,
+            #F4B400,
+            #00B5D8);
+
+    background-size: 300% 300%;
+
+    animation: imageBorder 8s linear infinite;
+
+    box-shadow:
+        0 20px 45px rgba(0, 181, 216, .18);
+
+}
+
+.image-box img {
+
+    width: 100%;
+
+    height: 380px;
+
+    object-fit: cover;
+
+    border-radius: 22px;
+
+    display: block;
+
+    transition: .55s;
+
+}
+
+/* Floating Animation */
+
+.image-box {
+
+    animation:
+        imageBorder 8s linear infinite,
+        imageFloat 6s ease-in-out infinite;
+
+}
+
+.focus-card:hover .image-box img {
+
+    transform: scale(1.08);
+
+}
+
+/*========================================
+        Glow
+========================================*/
+
+.image-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(130deg,
+            rgba(255, 255, 255, .12),
+            transparent,
+            rgba(255, 255, 255, .10));
+
+    opacity: 0;
+
+    transition: .4s;
+
+}
+
+.focus-card:hover .image-box::before {
+
+    opacity: 1;
+
+}
+
+/*========================================
+        CARD BORDER
+========================================*/
+
+.focus-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 30px;
+
+    padding: 2px;
+
+    background: linear-gradient(135deg,
+            #00B5D8,
+            #18A56F,
+            #F4B400);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    mask-composite: exclude;
+
+    opacity: 0;
+
+    transition: .45s;
+
+}
+
+.focus-card:hover::before {
+
+    opacity: 1;
+
+}
+
+/*========================================
+        SHINE
+========================================*/
+
+.focus-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -130%;
+
+    top: 0;
+
+    width: 45%;
+
+    height: 100%;
+
+    background: rgba(255, 255, 255, .22);
+
+    transform: skewX(-25deg);
+
+}
+
+.focus-card:hover::after {
+
+    animation: cardShine .9s;
+
+}
+
+/*========================================
+        LOAD EFFECT
+========================================*/
+
+.focus-card {
+
+    opacity: 0;
+
+    animation: cardLoad .8s ease forwards;
+
+}
+
+.focus-card:nth-of-type(1) {
+
+    animation-delay: .2s;
+
+}
+
+.focus-card:nth-of-type(2) {
+
+    animation-delay: .4s;
+
+}
+
+.focus-card:nth-of-type(3) {
+
+    animation-delay: .6s;
+
+}
+
+.focus-card:nth-of-type(4) {
+
+    animation-delay: .8s;
+
+}
+
+/*========================================
+        ANIMATIONS
+========================================*/
+
+@keyframes cardLoad {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(70px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes imageFloat {
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes imageBorder {
+
+    0% {
+
+        background-position: 0% 50%;
+
+    }
+
+    100% {
+
+        background-position: 300% 50%;
+
+    }
+
+}
+
+@keyframes topBorder {
+
+    from {
+
+        transform: translateX(0);
+
+    }
+
+    to {
+
+        transform: translateX(50%);
+
+    }
+
+}
+
+@keyframes underlineMove {
+
+    0% {
+
+        width: 120px;
+
+    }
+
+    50% {
+
+        width: 190px;
+
+    }
+
+    100% {
+
+        width: 120px;
+
+    }
+
+}
+
+@keyframes cardShine {
+
+    from {
+
+        left: -130%;
+
+    }
+
+    to {
+
+        left: 140%;
+
+    }
+
+}
+
+@keyframes numberShine {
+
+    from {
+
+        left: -120%;
+
+    }
+
+    to {
+
+        left: 140%;
+
+    }
+
+}
+
+@keyframes buttonShine {
+
+    from {
+
+        left: -120%;
+
+    }
+
+    to {
+
+        left: 140%;
+
+    }
+
+}
+
+/*========================================
+        RESPONSIVE
+========================================*/
+
+@media(max-width:1200px) {
+
+    .focus-card {
+
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+    }
+
+    .focus-card:nth-child(even) {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .focus-card:nth-child(even) .focus-content {
+
+        order: 2;
+
+    }
+
+    .focus-card:nth-child(even) .focus-image {
+
+        order: 1;
+
+    }
+
+}
+
+@media(max-width:768px) {
+
+    .focus-wrapper {
+
+        padding: 40px;
+
+    }
+
+    .focus-card {
+
+        padding: 30px;
+
+    }
+
+    .focus-wrapper h2 {
+
+        font-size: 34px;
+
+    }
+
+    .focus-content h3 {
+
+        font-size: 28px;
+
+    }
+
+    .focus-content ul {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .image-box img {
+
+        height: 260px;
+
+    }
+
+}
+
+@media(max-width:576px) {
+
+    .focus-wrapper {
+
+        padding: 22px;
+
+    }
+
+    .focus-card {
+
+        padding: 22px;
+
+    }
+
+    .focus-number {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 24px;
+
+    }
+
+    .focus-btn {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+}
+
+
+
+
+    <section class="cta">
+
+
+
+        <div class="cta-card">
+
+            <!-- Left -->
+
+            <div class="cta-content">
+
+                <span class="cta-tag">
+
+                    REGISTER FOR ICS 2026
+
+                </span>
+
+                <h2>
+
+                    Ready to Join the
+                    International Climate Summit 2026?
+
+                </h2>
+
+                <p>
+
+                    Be part of India's premier climate and sustainability
+                    conference. Download the official brochure, explore
+                    the agenda and register to connect with policymakers,
+                    industry leaders, innovators and global experts.
+
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="#" class="btn-primary">
+
+                        <i class="fa-solid fa-download"></i>
+
+                        Download Brochure
+
+                    </a>
+
+                    <a href="#" class="btn-secondary">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                        Register Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Right -->
+
+            <div class="cta-qr">
+
+                <div class="qr-card">
+
+                    <div class="qr-inner">
+
+                        <img src="assets/images/icons/Registration-QR.png" alt="Registration QR">
+
+                        <h4>Scan to Register</h4>
+
+                        <p>Quick Registration</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+ <section class="committee section">
+
+
+
+        <div class="section-heading">
+
+            <span>Leadership</span>
+
+            <h2>Organising Committee</h2>
+
+            <p>
+                The distinguished leaders and professionals guiding
+                the International Climate Summit 2026.
+            </p>
+
+        </div>
+
+        <div class="committee-grid">
+
+            <div class="committee-card">
+
+                <img src="assets/images/committee/member1.jpg" alt="">
+
+                <h3>Dr. J. P. Gupta</h3>
+
+                <span>Summit Chair</span>
+
+            </div>
+
+            <div class="committee-card">
+
+                <img src="assets/images/committee/member2.jpg" alt="">
+
+                <h3>Umesh Sahdev</h3>
+
+                <span>Co-Chair</span>
+
+            </div>
+
+            <div class="committee-card">
+
+                <img src="assets/images/committee/member3.jpg" alt="">
+
+                <h3>Mahendra Rustagi</h3>
+
+                <span>Co-Chair</span>
+
+            </div>
+
+            <div class="committee-card">
+
+                <img src="assets/images/committee/member4.jpg" alt="">
+
+                <h3>Dr. J.S. Sharma</h3>
+
+                <span>Co-Chair</span>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    
+.committee {
+
+    background: #F7F9FC;
+
+    padding: 100px 0;
+
+}
+
+.committee-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px;
+
+    margin-top: 60px;
+
+}
+
+.committee-card {
+
+    background: white;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .08);
+
+    transition: .3s;
+
+}
+
+.committee-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+.committee-card img {
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: cover;
+
+}
+
+.committee-card h3 {
+
+    margin-top: 20px;
+
+}
+
+.committee-card span {
+
+    color: #0BA8C8;
+
+    display: block;
+
+    padding-bottom: 25px;
+
+}
+
+
+/*=========================================
+            PARTNERS SECTION
+=========================================*/
