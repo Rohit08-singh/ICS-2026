@@ -2235,7 +2235,9 @@
 
 .nav-toggle{
 
-    display:none;
+    display:flex;
+
+    margin-left:auto;
 
     width:52px;
 
